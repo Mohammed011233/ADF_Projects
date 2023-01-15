@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="AllDepartments.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelBox text="Department Info" id="pb1">
+                <f:facet name="toolbar">
+                    <af:toolbar id="t2">
+                        <af:button text="Edit" id="b1" action="GoEdit"/>
+                    </af:toolbar>
+                </f:facet>
+                <af:table value="#{bindings.DepartmentsView1.collectionModel}" var="row"
+                          rows="#{bindings.DepartmentsView1.rangeSize}"
+                          emptyText="#{bindings.DepartmentsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.DepartmentsView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.DepartmentsView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.DepartmentsView1.rangeSize}"
+                          filterModel="#{bindings.DepartmentsView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.DepartmentsView1Query.processQuery}" varStatus="vs" id="t3">
+                    <af:column sortProperty="#{bindings.DepartmentsView1.hints.DepartmentId.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.DepartmentsView1.hints.DepartmentId.label}"
+                               id="c4">
+                        <af:outputText value="#{row.DepartmentId}"
+                                       shortDesc="#{bindings.DepartmentsView1.hints.DepartmentId.tooltip}" id="ot4">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.DepartmentsView1.hints.DepartmentId.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.DepartmentsView1.hints.DepartmentName.name}" filterable="true"
+                               sortable="true" headerText="#{bindings.DepartmentsView1.hints.DepartmentName.label}"
+                               id="c5">
+                        <af:outputText value="#{row.DepartmentName}"
+                                       shortDesc="#{bindings.DepartmentsView1.hints.DepartmentName.tooltip}" id="ot5"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.DepartmentsView1.hints.countOfEmployees.name}" sortable="true"
+                               headerText="#{bindings.DepartmentsView1.hints.countOfEmployees.label}" filterable="true"
+                               id="c6">
+                        <af:outputText value="#{row.countOfEmployees}"
+                                       shortDesc="#{bindings.DepartmentsView1.hints.countOfEmployees.tooltip}" id="ot6">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.DepartmentsView1.hints.countOfEmployees.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.DepartmentsView1.hints.totalOfSalary.name}" sortable="true"
+                               headerText="#{bindings.DepartmentsView1.hints.totalOfSalary.label}" filterable="true"
+                               id="c7">
+                        <af:outputText value="#{row.totalOfSalary}"
+                                       shortDesc="#{bindings.DepartmentsView1.hints.totalOfSalary.tooltip}" id="ot7">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.DepartmentsView1.hints.totalOfSalary.format}"/>
+                        </af:outputText>
+                    </af:column>
+                </af:table>
+            </af:panelBox>
+        </af:form>
+    </af:document>
+</f:view>

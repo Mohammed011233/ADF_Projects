@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.22.48" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <pageMap>
+    <page path="/pages/DepartmentsPage.jsf" usageId="view_DepartmentsPagePageDef"/>
+    <page path="/deptDetails.jsf" usageId="view_deptDetailsPageDef"/>
+    <page path="/AllDepartments.jsf" usageId="view_AllDepartmentsPageDef"/>
+    <page path="/DepartmentDetails.jsf" usageId="view_DepartmentDetailsPageDef"/>
+    <page path="/AddEmp.jsf" usageId="view_AddEmpPageDef"/>
+    <page path="/dept.jsf" usageId="view_deptPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_DepartmentsPagePageDef" path="pages.DepartmentsPagePageDef"/>
+    <page id="view_deptDetailsPageDef" path="view.pageDefs.deptDetailsPageDef"/>
+    <page id="view_AllDepartmentsPageDef" path="view.pageDefs.AllDepartmentsPageDef"/>
+    <page id="view_DepartmentDetailsPageDef" path="view.pageDefs.DepartmentDetailsPageDef"/>
+    <page id="view_AddEmpPageDef" path="view.pageDefs.AddEmpPageDef"/>
+    <page id="view_deptPageDef" path="view.pageDefs.deptPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HrAppModuleDataControl" Package="model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HrAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="AppModuleDataControl" Package="model.entity"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

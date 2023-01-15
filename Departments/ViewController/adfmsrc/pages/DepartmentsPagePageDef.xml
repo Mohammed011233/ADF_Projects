@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="DepartmentsPagePageDef"
+                Package="pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DeptResponse1" RangeSize="25" DataControl="AppModuleDataControl" id="DeptResponse1Iterator"/>
+    <searchRegion Binds="DeptResponse1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="DeptResponse1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DeptResponse1Iterator" id="DeptResponse1">
+      <nodeDefinition DefName="model.view.DeptResponse" Name="DeptResponse10">
+        <AttrNames>
+          <Item Value="DepartmentName"/>
+          <Item Value="EmployeeCount"/>
+          <Item Value="SalarySum"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">AllDepartments</property>
+      <property
+         name="x">152.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>AllDepartments&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">167.84473</property>
+      <property
+         name="page">/AllDepartments.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">DepartmentDetails</property>
+      <property
+         name="x">511.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>DepartmentDetails&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">169.59766</property>
+      <property
+         name="page">/DepartmentDetails.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View4"
+      to="View2">
+      <property
+         name="fromOutcome">Back</property>
+      <property
+         name="sdm:polyPoints">L46,470.0,165.74707,193.02216,163.99414,R46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View2"
+      to="View4">
+      <property
+         name="fromOutcome">GoEdit</property>
+      <property
+         name="sdm:polyPoints">R54,193.0,170.99414,469.97784,172.74707,L54</property>
+   </ControlFlowCase>
+</SDM>

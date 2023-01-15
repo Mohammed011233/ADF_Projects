@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="DepartmentsView1"
+    ViewObjectName="model.view.DepartmentsView"/>
+  <ViewUsage
+    Name="EmployeesView1"
+    ViewObjectName="model.view.EmployeesView"/>
+  <ViewUsage
+    Name="DepartmentsView2"
+    ViewObjectName="model.view.DepartmentsView"/>
+  <ViewUsage
+    Name="EmployeesView3"
+    ViewObjectName="model.view.EmployeesView"/>
+  <ViewUsage
+    Name="DeptResponse1"
+    ViewObjectName="model.view.DeptResponse"/>
+  <ViewUsage
+    Name="EmployeeRequest1"
+    ViewObjectName="model.view.EmployeeRequest"/>
+  <ViewUsage
+    Name="JobsView1"
+    ViewObjectName="model.view.JobsView"/>
+  <ViewUsage
+    Name="DeptResponse2"
+    ViewObjectName="model.view.DeptResponse"/>
+  <ViewLinkUsage
+    Name="DeptMgrFkLink1"
+    ViewLinkObjectName="model.view.DeptMgrFkLink"
+    SrcViewUsageName="model.entity.AppModule.EmployeesView1"
+    DstViewUsageName="model.entity.AppModule.DepartmentsView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="EmpDeptFkLink1"
+    ViewLinkObjectName="model.view.EmpDeptFkLink"
+    SrcViewUsageName="model.entity.AppModule.DepartmentsView1"
+    DstViewUsageName="model.entity.AppModule.EmployeesView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="EmpJobFkLink"
+    ViewLinkObjectName="model.view.EmpJobFkLink"
+    SrcViewUsageName="model.entity.AppModule.JobsView1"
+    DstViewUsageName="model.entity.AppModule.DeptResponse2"
+    Reversed="false"/>
+</AppModule>
